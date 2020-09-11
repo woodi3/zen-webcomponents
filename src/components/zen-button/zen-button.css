@@ -1,0 +1,86 @@
+:host {
+  display: block;
+}
+/* Base Btn styles */
+.zen-btn button {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  border-radius: .25rem;
+  border-width: 1px;
+  border-style: solid;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  padding-top: .5rem;
+  padding-bottom: .5rem;
+  cursor: pointer;
+  color: var(--gs-6);
+  font-size: .85rem;
+  transition-timing-function: var(--easing-fn);
+  transition-duration: .20s;
+  transition-delay: 0s;
+  transition-property: background-color, border-color;
+  /* outline-width: 3px; TODO figure out why this isn't being set */
+}
+/* Disabled styles */
+.zen-btn.disabled button {
+  cursor: not-allowed;
+  opacity: .75;
+}
+
+/* Button sizes */
+.zen-btn.sm button {
+  padding-left: .5rem;
+  padding-right: .5rem;
+  padding-top: .25rem;
+  padding-bottom: .25rem;
+  border-radius: .15rem;
+  font-size: .75rem;
+}
+.zen-btn.lg button {
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  padding-top: .75rem;
+  padding-bottom: .75rem;
+  font-size: 1.1rem;
+  border-radius: .33rem;
+}
+
+/* Default color button styles */
+.zen-btn.default button {
+  background-color: var(--gs-2);
+  border-color: var(--gs-2);
+}
+.zen-btn.default:not(.disabled) button:focus {
+  outline-color: var(--gs-3);
+}
+.zen-btn.default:not(.disabled) button:hover {
+  background-color: var(--gs-3);
+  border-color: var(--gs-3);
+}
+/* Primary color button styles */
+.zen-btn.primary button {
+  background-color: var(--primary);
+  border-color: var(--primary);
+  color: var(--gs-1);
+}
+.zen-btn.primary:not(.disabled) button:hover {
+  background-color: var(--bg-2);
+  border-color: var(--bg-2);
+}
+.zen-btn.primary:not(.disabled) button:focus {
+  outline-color: var(--bg-2);
+}
+/* Accent color button styles */
+.zen-btn.accent button {
+  background-color: var(--accent);
+  border-color: var(--accent);
+}
+.zen-btn.accent:not(.disabled) button:hover {
+  background-color: var(--accent-hover);
+  border-color: var(--accent-hover);
+}
+.zen-btn.accent:not(.disabled) button:focus {
+  outline-color: var(--accent-hover);
+}

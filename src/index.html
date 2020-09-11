@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0" />
+    <title>Stencil Component Starter</title>
+
+    <script type="module" src="/build/zen-webcomponents.esm.js"></script>
+    <script nomodule src="/build/zen-webcomponents.js"></script>
+  </head>
+  <body>
+    <zen-button onclick="onClick()">
+      Default button
+    </zen-button>
+    <zen-button primary onclick="onClick()">
+      Primary button
+    </zen-button>
+    <zen-button accent onclick="onClick()">
+      Accent button
+    </zen-button>
+    <zen-button size="sm" onclick="onClick()">
+      Small button
+    </zen-button>
+    <zen-button size="sm" primary onclick="onClick()">
+      Small button
+    </zen-button>
+    <zen-button size="sm" accent onclick="onClick()">
+      Small button
+    </zen-button>
+    <zen-button size="lg" onclick="onClick()">
+      Large button
+    </zen-button>
+    <zen-button size="lg" primary onclick="onClick()">
+      Large button
+    </zen-button>
+    <zen-button size="lg" accent onclick="onClick()">
+      Large button
+    </zen-button>
+    <zen-button onclick="onClick()" disabled>
+      Disabled button
+    </zen-button>
+    <zen-button primary onclick="onClick()" disabled>
+      Disabled button
+    </zen-button>
+    <zen-button accent onclick="onClick()" disabled>
+      Disabled button
+    </zen-button>
+
+    <script>
+      function onClick() {
+        console.log('A button was clicked!');
+      }
+    </script>
+  </body>
+</html>
