@@ -35,6 +35,9 @@ export namespace Components {
     interface ZenFileDrop {
     }
     interface ZenIcon {
+        "color": string;
+        "icon": string;
+        "size": string;
     }
     interface ZenIconButton {
     }
@@ -279,6 +282,9 @@ declare namespace LocalJSX {
     interface ZenFileDrop {
     }
     interface ZenIcon {
+        "color"?: string;
+        "icon"?: string;
+        "size"?: string;
     }
     interface ZenIconButton {
     }
