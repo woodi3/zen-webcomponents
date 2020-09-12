@@ -8,10 +8,8 @@ describe('zen-button', () => {
       html: `<zen-button></zen-button>`,
     });
     expect(page.root).toEqualHtml(`
-      <zen-button>
-        <mock:shadow-root>
-          <slot></slot>
-        </mock:shadow-root>
+      <zen-button class="default enabled md zen-btn">
+        <button></button>
       </zen-button>
     `);
   });
