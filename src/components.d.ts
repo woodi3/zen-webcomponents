@@ -81,6 +81,20 @@ export namespace Components {
     interface ZenSpinner {
     }
     interface ZenTextarea {
+        "ariaLabel": string;
+        "ariaLabelledBy": string;
+        "disabled": boolean;
+        "inputId": string;
+        "invalid": boolean;
+        "isReadOnly": boolean;
+        "maxLength": number;
+        "minLength": number;
+        "name": string;
+        "placeholder": string;
+        "required": boolean;
+        "resize": 'horizontal' | 'vertical' | 'none';
+        "value": string;
+        "variant": 'outline' | 'flushed' | 'unstyled';
     }
 }
 declare global {
@@ -345,6 +359,20 @@ declare namespace LocalJSX {
     interface ZenSpinner {
     }
     interface ZenTextarea {
+        "ariaLabel"?: string;
+        "ariaLabelledBy"?: string;
+        "disabled"?: boolean;
+        "inputId"?: string;
+        "invalid"?: boolean;
+        "isReadOnly"?: boolean;
+        "maxLength"?: number;
+        "minLength"?: number;
+        "name"?: string;
+        "placeholder"?: string;
+        "required"?: boolean;
+        "resize"?: 'horizontal' | 'vertical' | 'none';
+        "value"?: string;
+        "variant"?: 'outline' | 'flushed' | 'unstyled';
     }
     interface IntrinsicElements {
         "zen-accordion": ZenAccordion;

@@ -1,3 +1,78 @@
 :host {
   display: block;
 }
+/* Base textarea styles */
+.zen-textarea textarea {
+  align-items: center;
+  border-color: var(--gs-1);
+  display: flex;
+  font-size: 1rem;
+  padding-left: .5rem;
+  padding-right: .5rem;
+  padding-top: .5rem;
+  padding-bottom: .5rem;
+  position: relative;
+  outline: none;
+  transition-timing-function: var(--easing-fn);
+  transition-duration: .20s;
+  transition-delay: 0s;
+  transition-property: border-color;
+  -webkit-box-align: center;
+  -webkit-appearance: none;
+}
+/* Disabled styles */
+.zen-textarea.disabled textarea {
+  opacity: .75;
+  cursor: not-allowed;
+}
+/* Readonly styles */
+.zen-textarea textarea:read-only {
+  cursor: not-allowed;
+}
+/* Invalid styles */
+.zen-textarea textarea[aria-invalid="true"], .zen-textarea.invalid textarea {
+  border-color: var(--danger);
+}
+/* Required styles */
+.zen-textarea.required textarea:after {
+  color: var(--danger);
+  content: " *";
+}
+/* Resize styles */
+.zen-textarea.vertical textarea {
+  resize: vertical;
+}
+.zen-textarea.horizontal textarea {
+  resize: horizontal;
+}
+.zen-textarea.none textarea {
+  resize: none;
+}
+
+/* outline */
+.zen-textarea.outline textarea {
+  border-style: solid;
+  border-image: initial;
+  border-radius: .25rem;
+  border-width: 2px;
+}
+
+/* flushed */
+.zen-textarea.flushed textarea {
+  border-width: 0 0 2px 0;
+}
+
+/* unstyled */
+.zen-textarea.unstyled textarea {
+  border-width: 0;
+}
+
+/* Focus styles */
+.zen-textarea:not(.disabled):not(.invalid) textarea:not(:read-only):focus {
+  border-color: var(--primary);
+}
+.zen-textarea.unstyled:not(.disabled):not(.invalid) textarea:not(:read-only):focus {
+  outline-width: 2px;
+  outline-style: auto;
+  outline-color: var(--primary);
+}
