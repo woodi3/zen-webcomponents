@@ -8,10 +8,8 @@ describe('zen-textarea', () => {
       html: `<zen-textarea></zen-textarea>`,
     });
     expect(page.root).toEqualHtml(`
-      <zen-textarea>
-        <mock:shadow-root>
-          <slot></slot>
-        </mock:shadow-root>
+      <zen-textarea class="zen-textarea vertical outline">
+        <textarea value=""></textarea>
       </zen-textarea>
     `);
   });
