@@ -5,13 +5,11 @@ describe('zen-input', () => {
   it('renders', async () => {
     const page = await newSpecPage({
       components: [ZenInput],
-      html: `<zen-input></zen-input>`,
+      html: `<zen-input />`,
     });
     expect(page.root).toEqualHtml(`
-      <zen-input>
-        <mock:shadow-root>
-          <slot></slot>
-        </mock:shadow-root>
+      <zen-input class="md outline zen-input">
+       <input type="text" value="">
       </zen-input>
     `);
   });

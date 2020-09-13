@@ -42,6 +42,23 @@ export namespace Components {
     interface ZenIconButton {
     }
     interface ZenInput {
+        "ariaLabel": string;
+        "ariaLabelledBy": string;
+        "disabled": boolean;
+        "inputId": string;
+        "invalid": boolean;
+        "isReadOnly": boolean;
+        "max": number;
+        "maxLength": number;
+        "min": number;
+        "minLength": number;
+        "name": string;
+        "placeholder": string;
+        "required": boolean;
+        "size": string;
+        "type": string;
+        "value": string;
+        "variant": 'outline' | 'flushed' | 'unstyled';
     }
     interface ZenInputGroup {
     }
@@ -289,6 +306,23 @@ declare namespace LocalJSX {
     interface ZenIconButton {
     }
     interface ZenInput {
+        "ariaLabel"?: string;
+        "ariaLabelledBy"?: string;
+        "disabled"?: boolean;
+        "inputId"?: string;
+        "invalid"?: boolean;
+        "isReadOnly"?: boolean;
+        "max"?: number;
+        "maxLength"?: number;
+        "min"?: number;
+        "minLength"?: number;
+        "name"?: string;
+        "placeholder"?: string;
+        "required"?: boolean;
+        "size"?: string;
+        "type"?: string;
+        "value"?: string;
+        "variant"?: 'outline' | 'flushed' | 'unstyled';
     }
     interface ZenInputGroup {
     }

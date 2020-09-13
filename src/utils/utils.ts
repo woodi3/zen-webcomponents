@@ -3,6 +3,7 @@ export const DEFAULT_THEME = {
     'primary': "#613DC1",
     'accent': "#97DFFC",
     'accent-hover': "#87c8e2",
+    'danger': '#D33F49',
     'easing-fn': 'ease-in-out',
     'backgroundColors': {
         values: ["#858AE3", "#4E148C", "#2C0735"],
@@ -30,4 +31,25 @@ export function setTheme(theme) {
             root.style.setProperty(`--${key}`, value);
         }
     });
+}
+
+/**
+ * Gets size string based on size parameter.
+ * @param size should be value of sm/small, md, lg/large, and xl. Default return is md.
+ */
+export function getSize(size: string): string {
+    switch(size.toLowerCase()) {
+        case 'sm':
+        case 'small':
+            return 'sm';
+        case 'md':
+            return 'md';
+        case 'lg':
+        case 'large':
+            return 'lg';
+        case 'xl':
+            return 'xl';
+        default:
+            return 'md';
+    }
 }
