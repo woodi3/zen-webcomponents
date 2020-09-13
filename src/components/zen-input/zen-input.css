@@ -93,29 +93,3 @@
   outline-style: auto;
   outline-color: var(--primary);
 }
-
-/*
-.zen-input-flushed {
-    border-width: 0px 0px 2px 0px;
-}
-.zen-input.zen-input-element-left-sm {
-    padding-left: calc(var(--font-size) * 2);
-}
-.zen-input.zen-input-element-right-sm {
-    padding-right: calc(var(--font-size) * 2);
-}
-.zen-input.zen-input-element-left-md {
-    padding-left: calc(var(--font-size) * 2.5);
-}
-.zen-input.zen-input-element-right-md {
-    padding-right: calc(var(--font-size) * 2.5);
-}
-.zen-input.zen-input-element-left-lg {
-    padding-left: calc(var(--font-size) * 3);
-}
-.zen-input.zen-input-element-right-lg {
-    padding-right: calc(var(--font-size) * 3);
-}
-.zen-input[aria-invalid="true"], .zen-textarea[aria-invalid="true"] {
-    border-color: var(--danger-color) !important;
-} */
