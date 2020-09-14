@@ -1,20 +1,12 @@
 import { argTypes } from './argTypes';
+import { createStoryArgs } from '../../utils/utils';
 
 export default {
     title: 'Zen Flex',
     argTypes
 };
 
-const args = {};
-Object.keys(argTypes).map(key => {
-    const val = argTypes[key];
-    const isBoolean = val.control.type == 'boolean';
-    const hasDefault = val.defaultValue != undefined;
-    args[key] = isBoolean ? false
-        : (
-            hasDefault ? val.defaultValue : ''
-        );
-});
+const args = createStoryArgs(argTypes);
 
 const Template = ({
     align,
