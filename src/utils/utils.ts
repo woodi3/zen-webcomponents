@@ -53,3 +53,17 @@ export function getSize(size: string): string {
             return 'md';
     }
 }
+
+export function createStoryArgs(argTypes) {
+    var args = {};
+    Object.keys(argTypes).map(key => {
+        const val = argTypes[key];
+        const isBoolean = val.control.type == 'boolean';
+        const hasDefault = val.defaultValue != undefined;
+        args[key] = isBoolean ? false
+            : (
+                hasDefault ? val.defaultValue : ''
+            );
+    });
+    return args;
+}
