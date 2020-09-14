@@ -34,6 +34,26 @@ export namespace Components {
     }
     interface ZenFileDrop {
     }
+    interface ZenFlex {
+        "align": 'stretch' |
+    'center' |
+    'flex-start' |
+    'flex-end' |
+    'baseline';
+        "direction": 'row' |
+    'row-reverse' |
+    'column' |
+    'column-reverse';
+        "justify": 'center' | 
+    'space-between' |
+    'space-around' | 
+    'space-evenly' |
+    'flex-start' |
+    'flex-end';
+        "wrap": 'wrap' |
+    'nowrap' |
+    'wrap-reverse';
+    }
     interface ZenIcon {
         "color": string;
         "icon": string;
@@ -59,8 +79,6 @@ export namespace Components {
         "type": string;
         "value": string;
         "variant": 'outline' | 'flushed' | 'unstyled';
-    }
-    interface ZenInputGroup {
     }
     interface ZenInputIcon {
     }
@@ -170,6 +188,12 @@ declare global {
         prototype: HTMLZenFileDropElement;
         new (): HTMLZenFileDropElement;
     };
+    interface HTMLZenFlexElement extends Components.ZenFlex, HTMLStencilElement {
+    }
+    var HTMLZenFlexElement: {
+        prototype: HTMLZenFlexElement;
+        new (): HTMLZenFlexElement;
+    };
     interface HTMLZenIconElement extends Components.ZenIcon, HTMLStencilElement {
     }
     var HTMLZenIconElement: {
@@ -187,12 +211,6 @@ declare global {
     var HTMLZenInputElement: {
         prototype: HTMLZenInputElement;
         new (): HTMLZenInputElement;
-    };
-    interface HTMLZenInputGroupElement extends Components.ZenInputGroup, HTMLStencilElement {
-    }
-    var HTMLZenInputGroupElement: {
-        prototype: HTMLZenInputGroupElement;
-        new (): HTMLZenInputGroupElement;
     };
     interface HTMLZenInputIconElement extends Components.ZenInputIcon, HTMLStencilElement {
     }
@@ -267,10 +285,10 @@ declare global {
         "zen-draggable": HTMLZenDraggableElement;
         "zen-drawer": HTMLZenDrawerElement;
         "zen-file-drop": HTMLZenFileDropElement;
+        "zen-flex": HTMLZenFlexElement;
         "zen-icon": HTMLZenIconElement;
         "zen-icon-button": HTMLZenIconButtonElement;
         "zen-input": HTMLZenInputElement;
-        "zen-input-group": HTMLZenInputGroupElement;
         "zen-input-icon": HTMLZenInputIconElement;
         "zen-link": HTMLZenLinkElement;
         "zen-modal": HTMLZenModalElement;
@@ -312,6 +330,26 @@ declare namespace LocalJSX {
     }
     interface ZenFileDrop {
     }
+    interface ZenFlex {
+        "align"?: 'stretch' |
+    'center' |
+    'flex-start' |
+    'flex-end' |
+    'baseline';
+        "direction"?: 'row' |
+    'row-reverse' |
+    'column' |
+    'column-reverse';
+        "justify"?: 'center' | 
+    'space-between' |
+    'space-around' | 
+    'space-evenly' |
+    'flex-start' |
+    'flex-end';
+        "wrap"?: 'wrap' |
+    'nowrap' |
+    'wrap-reverse';
+    }
     interface ZenIcon {
         "color"?: string;
         "icon"?: string;
@@ -337,8 +375,6 @@ declare namespace LocalJSX {
         "type"?: string;
         "value"?: string;
         "variant"?: 'outline' | 'flushed' | 'unstyled';
-    }
-    interface ZenInputGroup {
     }
     interface ZenInputIcon {
     }
@@ -387,10 +423,10 @@ declare namespace LocalJSX {
         "zen-draggable": ZenDraggable;
         "zen-drawer": ZenDrawer;
         "zen-file-drop": ZenFileDrop;
+        "zen-flex": ZenFlex;
         "zen-icon": ZenIcon;
         "zen-icon-button": ZenIconButton;
         "zen-input": ZenInput;
-        "zen-input-group": ZenInputGroup;
         "zen-input-icon": ZenInputIcon;
         "zen-link": ZenLink;
         "zen-modal": ZenModal;
@@ -419,10 +455,10 @@ declare module "@stencil/core" {
             "zen-draggable": LocalJSX.ZenDraggable & JSXBase.HTMLAttributes<HTMLZenDraggableElement>;
             "zen-drawer": LocalJSX.ZenDrawer & JSXBase.HTMLAttributes<HTMLZenDrawerElement>;
             "zen-file-drop": LocalJSX.ZenFileDrop & JSXBase.HTMLAttributes<HTMLZenFileDropElement>;
+            "zen-flex": LocalJSX.ZenFlex & JSXBase.HTMLAttributes<HTMLZenFlexElement>;
             "zen-icon": LocalJSX.ZenIcon & JSXBase.HTMLAttributes<HTMLZenIconElement>;
             "zen-icon-button": LocalJSX.ZenIconButton & JSXBase.HTMLAttributes<HTMLZenIconButtonElement>;
             "zen-input": LocalJSX.ZenInput & JSXBase.HTMLAttributes<HTMLZenInputElement>;
-            "zen-input-group": LocalJSX.ZenInputGroup & JSXBase.HTMLAttributes<HTMLZenInputGroupElement>;
             "zen-input-icon": LocalJSX.ZenInputIcon & JSXBase.HTMLAttributes<HTMLZenInputIconElement>;
             "zen-link": LocalJSX.ZenLink & JSXBase.HTMLAttributes<HTMLZenLinkElement>;
             "zen-modal": LocalJSX.ZenModal & JSXBase.HTMLAttributes<HTMLZenModalElement>;

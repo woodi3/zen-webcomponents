@@ -1,0 +1,60 @@
+:host {
+  display: block;
+}
+.zen-flex > div {
+  display: flex;
+}
+.zen-flex.j-center > div {
+  justify-content: center;
+}
+.zen-flex.j-space-between > div {
+  justify-content: space-between;
+}
+.zen-flex.j-space-around > div {
+  justify-content: space-around;
+}
+.zen-flex.j-space-evenly > div {
+  justify-content: space-evenly;
+}
+.zen-flex.j-flex-start > div {
+  justify-content: flex-start;
+}
+.zen-flex.j-flex-end > div {
+  justify-content: flex-end;
+}
+.zen-flex.a-center > div {
+  align-items: center;
+}
+.zen-flex.a-stretch > div {
+  align-items: stretch;
+}
+.zen-flex.a-flex-start > div {
+  align-items: flex-start;
+}
+.zen-flex.a-flex-end > div {
+  align-items: flex-end;
+}
+.zen-flex.a-baseline > div {
+  align-items: baseline;
+}
+.zen-flex.d-row > div {
+  flex-direction: row;
+}
+.zen-flex.d-row-reverse > div {
+  flex-direction: row-reverse;
+}
+.zen-flex.d-column > div {
+  flex-direction: column;
+}
+.zen-flex.d-column-reverse > div {
+  flex-direction: column-reverse;
+}
+.zen-flex.w-wrap > div {
+  flex-wrap: wrap;
+}
+.zen-flex.w-nowrap > div {
+  flex-wrap: nowrap;
+}
+.zen-flex.w-wrap-reverse > div {
+  flex-wrap: wrap-reverse;
+}
