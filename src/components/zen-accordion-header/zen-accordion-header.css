@@ -4,11 +4,25 @@
 
 .accordion-header > div {
   border-top-style: solid;
-  border-top-color: var(--gs-2);
-  border-top-color: var(--gs-2);
+  border-top-color: var(--gs-1);
+  border-top-color: var(--gs-1);
   border-top-width: 1px;
   border-bottom-style: solid;
-  border-bottom-color: var(--gs-2);
-  border-bottom-color: var(--gs-2);
+  border-bottom-color: var(--gs-1);
+  border-bottom-color: var(--gs-1);
   border-bottom-width: 1px;
+}
+.accordion-header > div {
+  padding-left: 1rem;
+  padding-right: 1rem;
+  padding-top: .5rem;
+  padding-bottom: .5rem;
+}
+.accordion-header > div:hover {
+  background-color: var(--gs-1);
+  cursor: pointer;
+}
+.accordion-header > div:focus {
+  outline-color: var(--primary);
+  outline-width: 1px;
 }

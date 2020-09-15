@@ -22,18 +22,26 @@
 .accordion-pane.closed .accordion-header .accordion-arrow {
   transform: rotate(0deg);
 }
+.accordion-pane.closed .accordion-body > div {
+  padding: 0;
+}
 .accordion-pane.open .accordion-body > div {
-  /* height: 100%px; */
   max-height: 150px;
   overflow: auto;
+}
+.accordion-pane.open .accordion-body > div {
+  padding: 1rem;
 }
 .accordion-pane.open .accordion-header > div {
   border-bottom: none;
 }
+.accordion-pane.open + .accordion-pane.closed .accordion-header > div {
+  border-top: none;
+}
 .accordion-pane.open .accordion-body > div {
   border-bottom-style: solid;
-  border-bottom-color: var(--gs-2);
-  border-bottom-color: var(--gs-2);
+  border-bottom-color: var(--gs-1);
+  border-bottom-color: var(--gs-1);
   border-bottom-width: 1px;
 }
 .accordion-pane.open .accordion-header .accordion-arrow {

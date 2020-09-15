@@ -12,8 +12,10 @@ export class ZenAccordionHeader {
   render() {
     return (
       <Host class={this.getClasses()}>
-        <div>
-          <zen-flex justify="space-between" onClick={this.handleClick.bind(this)}>
+        <div tabIndex={0} onClick={this.handleClick.bind(this)}
+          onKeyDown={this.handleKeydown.bind(this)}>
+          <zen-flex align="center" 
+            justify="space-between">
             <div>
               <slot></slot>
             </div>
@@ -29,6 +31,11 @@ export class ZenAccordionHeader {
   }
   private handleClick () {
     this.toggle.emit(this.el);
+  }
+  private handleKeydown ({ keyCode }: KeyboardEvent) {
+    if (keyCode == 13) {
+      this.handleClick();
+    }
   }
 
 }

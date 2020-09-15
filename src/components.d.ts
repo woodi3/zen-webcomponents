@@ -8,6 +8,8 @@ import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 import { Breakpoint } from "./components/zen-column/utils";
 export namespace Components {
     interface ZenAccordion {
+        "allowToggle": boolean;
+        "maxHeight": string;
     }
     interface ZenAccordionBody {
     }
@@ -335,6 +337,8 @@ declare global {
 }
 declare namespace LocalJSX {
     interface ZenAccordion {
+        "allowToggle"?: boolean;
+        "maxHeight"?: string;
     }
     interface ZenAccordionBody {
     }

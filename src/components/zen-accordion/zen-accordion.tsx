@@ -1,4 +1,4 @@
-import { Component, Host, h, Listen } from '@stencil/core';
+import { Component, Host, h, Listen, Element, Prop } from '@stencil/core';
 
 @Component({
   tag: 'zen-accordion',
@@ -6,8 +6,13 @@ import { Component, Host, h, Listen } from '@stencil/core';
 })
 export class ZenAccordion {
 
-  // @Prop() 
+  @Element() root: HTMLZenAccordionElement;
+
+  panes: HTMLZenAccordionPaneElement[];
   openPane: HTMLZenAccordionPaneElement;
+
+  @Prop() allowToggle: boolean;
+  @Prop() maxHeight: string = '200px';
 
   @Listen('toggle', {capture: true})
   handleToggle(evt: CustomEvent<HTMLZenAccordionHeaderElement>) {
@@ -18,11 +23,37 @@ export class ZenAccordion {
       this.openPane['open'] = true;
     }
     else if (this.openPane.id != pane.id && paneIsClosed) {
-      // open the pane and close the open pane
+      // close the current opened pane
       this.openPane['open'] = false;
+
+      this.setPaneBodyAriaHidden(this.openPane, 'true');
+      this.setMaxHeight(this.openPane, '0');
+
+      // open new pane
       pane['open'] = true;
       this.openPane = pane;
     }
+    else if (this.allowToggle) {
+      this.openPane['open'] = false;
+      this.setPaneBodyAriaHidden(this.openPane, 'true');
+      this.setMaxHeight(this.openPane, '0');
+      this.openPane = null;
+    }
+
+    if (this.openPane) {
+      this.setMaxHeight(this.openPane, this.maxHeight);
+      this.setPaneBodyAriaHidden(this.openPane, 'false');
+    }
+  }
+
+  componentWillLoad() {
+    var paneNodes = this.root.querySelectorAll('zen-accordion-pane');
+    this.panes = Array.prototype.slice.call(paneNodes);
+  }
+  componentDidLoad() {
+    this.panes.forEach(function initPane(pane) {
+      this.setPaneBodyAriaHidden(pane, 'true');
+    }.bind(this));
   }
 
   render() {
@@ -37,6 +68,16 @@ export class ZenAccordion {
 
   private getClasses (): string {
     return `zen-accordion`;
+  }
+
+  private setMaxHeight (pane: HTMLZenAccordionPaneElement, height: string) {
+    var body = pane.querySelector('.accordion-body > div') as HTMLElement;
+    body.style.maxHeight = height;
+  }
+
+  private setPaneBodyAriaHidden (pane: HTMLZenAccordionPaneElement, val: string) {
+    var body = pane.querySelector('.accordion-body > div');
+    body.setAttribute('aria-hidden', val);
   }
 
 }
