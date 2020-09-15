@@ -14,6 +14,11 @@ export namespace Components {
     interface ZenAccordionPane {
     }
     interface ZenAvatar {
+        "altText": any;
+        "fallbackSrc": string;
+        "imgSrc": string;
+        "initials": any;
+        "size": 'sm' | 'small' | 'md' | 'lg' | 'large';
     }
     interface ZenButton {
         "accent": boolean;
@@ -65,6 +70,11 @@ export namespace Components {
         "size": string;
     }
     interface ZenIconButton {
+    }
+    interface ZenImage {
+        "altText": string;
+        "fallbackSrc": string;
+        "imgSrc": string;
     }
     interface ZenInput {
         "ariaLabel": string;
@@ -211,6 +221,12 @@ declare global {
         prototype: HTMLZenIconButtonElement;
         new (): HTMLZenIconButtonElement;
     };
+    interface HTMLZenImageElement extends Components.ZenImage, HTMLStencilElement {
+    }
+    var HTMLZenImageElement: {
+        prototype: HTMLZenImageElement;
+        new (): HTMLZenImageElement;
+    };
     interface HTMLZenInputElement extends Components.ZenInput, HTMLStencilElement {
     }
     var HTMLZenInputElement: {
@@ -293,6 +309,7 @@ declare global {
         "zen-flex": HTMLZenFlexElement;
         "zen-icon": HTMLZenIconElement;
         "zen-icon-button": HTMLZenIconButtonElement;
+        "zen-image": HTMLZenImageElement;
         "zen-input": HTMLZenInputElement;
         "zen-input-icon": HTMLZenInputIconElement;
         "zen-link": HTMLZenLinkElement;
@@ -314,6 +331,11 @@ declare namespace LocalJSX {
     interface ZenAccordionPane {
     }
     interface ZenAvatar {
+        "altText"?: any;
+        "fallbackSrc"?: string;
+        "imgSrc"?: string;
+        "initials"?: any;
+        "size"?: 'sm' | 'small' | 'md' | 'lg' | 'large';
     }
     interface ZenButton {
         "accent"?: boolean;
@@ -365,6 +387,11 @@ declare namespace LocalJSX {
         "size"?: string;
     }
     interface ZenIconButton {
+    }
+    interface ZenImage {
+        "altText"?: string;
+        "fallbackSrc"?: string;
+        "imgSrc"?: string;
     }
     interface ZenInput {
         "ariaLabel"?: string;
@@ -435,6 +462,7 @@ declare namespace LocalJSX {
         "zen-flex": ZenFlex;
         "zen-icon": ZenIcon;
         "zen-icon-button": ZenIconButton;
+        "zen-image": ZenImage;
         "zen-input": ZenInput;
         "zen-input-icon": ZenInputIcon;
         "zen-link": ZenLink;
@@ -467,6 +495,7 @@ declare module "@stencil/core" {
             "zen-flex": LocalJSX.ZenFlex & JSXBase.HTMLAttributes<HTMLZenFlexElement>;
             "zen-icon": LocalJSX.ZenIcon & JSXBase.HTMLAttributes<HTMLZenIconElement>;
             "zen-icon-button": LocalJSX.ZenIconButton & JSXBase.HTMLAttributes<HTMLZenIconButtonElement>;
+            "zen-image": LocalJSX.ZenImage & JSXBase.HTMLAttributes<HTMLZenImageElement>;
             "zen-input": LocalJSX.ZenInput & JSXBase.HTMLAttributes<HTMLZenInputElement>;
             "zen-input-icon": LocalJSX.ZenInputIcon & JSXBase.HTMLAttributes<HTMLZenInputIconElement>;
             "zen-link": LocalJSX.ZenLink & JSXBase.HTMLAttributes<HTMLZenLinkElement>;
