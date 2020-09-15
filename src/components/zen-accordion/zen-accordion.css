@@ -1,3 +1,7 @@
 :host {
   display: block;
 }
+
+.zen-accordion > div .accordion-pane:last-child .accordion-header > div {
+  border-top: none;
+}

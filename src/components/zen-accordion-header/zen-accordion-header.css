@@ -1,3 +1,14 @@
 :host {
   display: block;
 }
+
+.accordion-header > div {
+  border-top-style: solid;
+  border-top-color: var(--gs-2);
+  border-top-color: var(--gs-2);
+  border-top-width: 1px;
+  border-bottom-style: solid;
+  border-bottom-color: var(--gs-2);
+  border-bottom-color: var(--gs-2);
+  border-bottom-width: 1px;
+}

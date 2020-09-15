@@ -9,9 +9,12 @@ import { Breakpoint } from "./components/zen-column/utils";
 export namespace Components {
     interface ZenAccordion {
     }
+    interface ZenAccordionBody {
+    }
     interface ZenAccordionHeader {
     }
     interface ZenAccordionPane {
+        "open": boolean;
     }
     interface ZenAvatar {
         "altText": any;
@@ -136,6 +139,12 @@ declare global {
     var HTMLZenAccordionElement: {
         prototype: HTMLZenAccordionElement;
         new (): HTMLZenAccordionElement;
+    };
+    interface HTMLZenAccordionBodyElement extends Components.ZenAccordionBody, HTMLStencilElement {
+    }
+    var HTMLZenAccordionBodyElement: {
+        prototype: HTMLZenAccordionBodyElement;
+        new (): HTMLZenAccordionBodyElement;
     };
     interface HTMLZenAccordionHeaderElement extends Components.ZenAccordionHeader, HTMLStencilElement {
     }
@@ -295,6 +304,7 @@ declare global {
     };
     interface HTMLElementTagNameMap {
         "zen-accordion": HTMLZenAccordionElement;
+        "zen-accordion-body": HTMLZenAccordionBodyElement;
         "zen-accordion-header": HTMLZenAccordionHeaderElement;
         "zen-accordion-pane": HTMLZenAccordionPaneElement;
         "zen-avatar": HTMLZenAvatarElement;
@@ -326,9 +336,13 @@ declare global {
 declare namespace LocalJSX {
     interface ZenAccordion {
     }
+    interface ZenAccordionBody {
+    }
     interface ZenAccordionHeader {
+        "onToggle"?: (event: CustomEvent<HTMLZenAccordionHeaderElement>) => void;
     }
     interface ZenAccordionPane {
+        "open"?: boolean;
     }
     interface ZenAvatar {
         "altText"?: any;
@@ -448,6 +462,7 @@ declare namespace LocalJSX {
     }
     interface IntrinsicElements {
         "zen-accordion": ZenAccordion;
+        "zen-accordion-body": ZenAccordionBody;
         "zen-accordion-header": ZenAccordionHeader;
         "zen-accordion-pane": ZenAccordionPane;
         "zen-avatar": ZenAvatar;
@@ -481,6 +496,7 @@ declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
             "zen-accordion": LocalJSX.ZenAccordion & JSXBase.HTMLAttributes<HTMLZenAccordionElement>;
+            "zen-accordion-body": LocalJSX.ZenAccordionBody & JSXBase.HTMLAttributes<HTMLZenAccordionBodyElement>;
             "zen-accordion-header": LocalJSX.ZenAccordionHeader & JSXBase.HTMLAttributes<HTMLZenAccordionHeaderElement>;
             "zen-accordion-pane": LocalJSX.ZenAccordionPane & JSXBase.HTMLAttributes<HTMLZenAccordionPaneElement>;
             "zen-avatar": LocalJSX.ZenAvatar & JSXBase.HTMLAttributes<HTMLZenAvatarElement>;
