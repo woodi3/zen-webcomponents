@@ -1,0 +1,7 @@
+:host {
+  display: block;
+}
+.zen-image img {
+  height: 100%;
+  width: 100%;
+}

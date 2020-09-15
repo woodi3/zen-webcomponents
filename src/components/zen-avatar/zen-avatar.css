@@ -1,3 +1,46 @@
 :host {
   display: block;
 }
+
+.zen-avatar .zen-image img {
+  border-radius: 50%;
+}
+.zen-avatar .initials {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-transform: uppercase;
+  font-weight: bold;
+  background-color: var(--gs-2);
+  color: var(--gs-5);
+  letter-spacing: 1px;
+  border-radius: 50%;
+}
+.zen-avatar.sm .initials {
+  height: var(--avatar-sm);
+  width: var(--avatar-sm);
+  font-size: calc(var(--avatar-sm) / 3);
+}
+.zen-avatar.md .initials {
+  height: var(--avatar-md);
+  width: var(--avatar-md);
+  font-size: calc(var(--avatar-md) / 3);;
+}
+.zen-avatar.lg .initials {
+  height: var(--avatar-lg);
+  width: var(--avatar-lg);
+  font-size: calc(var(--avatar-lg) / 3);;
+}
+
+.zen-avatar.sm .zen-image img {
+  height: var(--avatar-sm);
+  width: var(--avatar-sm);
+}
+.zen-avatar.md .zen-image img {
+  height: var(--avatar-md);
+  width: var(--avatar-md);
+}
+.zen-avatar.lg .zen-image img {
+  height: var(--avatar-lg);
+  width: var(--avatar-lg);
+}

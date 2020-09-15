@@ -12,7 +12,7 @@
 | `breakpoints` | --        |             | `Breakpoint[]`     | `[]`        |
 | `pull`        | `pull`    |             | `number \| string` | `undefined` |
 | `push`        | `push`    |             | `number \| string` | `undefined` |
-| `span`        | `span`    |             | `number \| string` | `undefined` |
+| `span`        | `span`    |             | `number \| string` | `'auto'`    |
 
 
 ----------------------------------------------

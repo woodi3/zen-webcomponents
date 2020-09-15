@@ -5,6 +5,9 @@ export const DEFAULT_THEME = {
     'accent-hover': "#87c8e2",
     'danger': '#D33F49',
     'easing-fn': 'ease-in-out',
+    'avatar-sm': '24px',
+    'avatar-md': '48px',
+    'avatar-lg': '72px',
     'backgroundColors': {
         values: ["#858AE3", "#4E148C", "#2C0735"],
         prefix: 'bg'

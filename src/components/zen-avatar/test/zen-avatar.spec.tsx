@@ -5,13 +5,13 @@ describe('zen-avatar', () => {
   it('renders', async () => {
     const page = await newSpecPage({
       components: [ZenAvatar],
-      html: `<zen-avatar></zen-avatar>`,
+      html: `<zen-avatar initials="ww"></zen-avatar>`,
     });
     expect(page.root).toEqualHtml(`
-      <zen-avatar>
-        <mock:shadow-root>
-          <slot></slot>
-        </mock:shadow-root>
+      <zen-avatar class="zen-avatar md" initials="ww">
+        <div class="initials">
+          ww
+        </div>
       </zen-avatar>
     `);
   });
