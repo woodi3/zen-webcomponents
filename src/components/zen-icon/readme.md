@@ -14,6 +14,19 @@
 | `size`   | `size`    |             | `string` | `"md"`      |
 
 
+## Dependencies
+
+### Used by
+
+ - [zen-accordion-header](../zen-accordion-header)
+
+### Graph
+```mermaid
+graph TD;
+  zen-accordion-header --> zen-icon
+  style zen-icon fill:#f9f,stroke:#333,stroke-width:4px
+```
+
 ----------------------------------------------
 
 *Built with [StencilJS](https://stenciljs.com/)*
