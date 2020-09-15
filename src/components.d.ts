@@ -5,6 +5,7 @@
  * It contains typing information for all components that exist in this project.
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
+import { Breakpoint } from "./components/zen-column/utils";
 export namespace Components {
     interface ZenAccordion {
     }
@@ -25,6 +26,10 @@ export namespace Components {
     interface ZenCode {
     }
     interface ZenColumn {
+        "breakpoints": Breakpoint[];
+        "pull": string | number;
+        "push": string | number;
+        "span": string | number;
     }
     interface ZenDragZone {
     }
@@ -321,6 +326,10 @@ declare namespace LocalJSX {
     interface ZenCode {
     }
     interface ZenColumn {
+        "breakpoints"?: Breakpoint[];
+        "pull"?: string | number;
+        "push"?: string | number;
+        "span"?: string | number;
     }
     interface ZenDragZone {
     }

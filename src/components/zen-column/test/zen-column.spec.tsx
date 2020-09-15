@@ -5,13 +5,13 @@ describe('zen-column', () => {
   it('renders', async () => {
     const page = await newSpecPage({
       components: [ZenColumn],
-      html: `<zen-column></zen-column>`,
+      html: `<zen-column>
+        <div> Some content </div>
+      </zen-column>`,
     });
     expect(page.root).toEqualHtml(`
-      <zen-column>
-        <mock:shadow-root>
-          <slot></slot>
-        </mock:shadow-root>
+      <zen-column class="zen-column" style="flex: 0 1 auto;">
+        <div> Some content </div>
       </zen-column>
     `);
   });

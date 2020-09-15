@@ -50,10 +50,42 @@
     <zen-icon icon="alert-triangle" size="lg"></zen-icon>
     <zen-icon icon="alert-triangle" size="xl"></zen-icon>
 
+    <div>
+      <h4>Zen Column Breakpoints</h4>
+      <zen-flex>
+        <zen-column span="16" id="col">
+          <div style="background-color: red;">A column</div>
+        </zen-column>
+      </zen-flex>
+    </div>
+
     <script>
       function onClick() {
         console.log('A button was clicked!');
       }
+      var column = document.querySelector('#col');
+      column.breakpoints = [
+        {
+          size: 'xs',
+          span: 16
+        },
+        {
+          size: 'sm',
+          span: 16
+        },
+        {
+          size: 'md',
+          span: 8
+        },
+        {
+          size: 'lg',
+          span: 4
+        },
+        {
+          size: 'xl',
+          span: 4
+        }
+      ];
     </script>
   </body>
 </html>
