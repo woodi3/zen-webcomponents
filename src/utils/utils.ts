@@ -58,7 +58,12 @@ export function createStoryArgs(argTypes) {
     var args = {};
     Object.keys(argTypes).map(key => {
         const val = argTypes[key];
-        const isBoolean = val.control.type == 'boolean';
+        if (val.hide == true) {
+            args[key] = undefined;
+            return;
+        }
+        const hasControl = val.control != undefined;
+        const isBoolean = hasControl && val.control.type == 'boolean';
         const hasDefault = val.defaultValue != undefined;
         args[key] = isBoolean ? false
             : (
