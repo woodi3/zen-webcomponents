@@ -8,10 +8,10 @@ describe('zen-spinner', () => {
       html: `<zen-spinner></zen-spinner>`,
     });
     expect(page.root).toEqualHtml(`
-      <zen-spinner>
-        <mock:shadow-root>
-          <slot></slot>
-        </mock:shadow-root>
+      <zen-spinner class="zen-spinner md">
+        <div class="loader">
+          <span class="sr-only">Content is loading...</span>
+        </div>
       </zen-spinner>
     `);
   });
