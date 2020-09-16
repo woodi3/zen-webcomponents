@@ -1,7 +1,9 @@
 
 export const DEFAULT_THEME = {
     'primary': "#613DC1",
+    'primary-rgb-light': 'rgba(97,61,193,0.2)',
     'accent': "#97DFFC",
+    'accent-rgb-light': 'rgba(151,223,252,0.2)',
     'accent-hover': "#87c8e2",
     'danger': '#D33F49',
     'modal-height': 'calc(100vh - 7.5rem)',
