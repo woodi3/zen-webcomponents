@@ -109,7 +109,6 @@ export namespace Components {
         "centered": boolean;
         "closeOnOverlayClick": boolean;
         "height": string;
-        "open": boolean;
         "overlay": boolean;
         "size": string;
     }
@@ -457,7 +456,6 @@ declare namespace LocalJSX {
         "closeOnOverlayClick"?: boolean;
         "height"?: string;
         "onClose"?: (event: CustomEvent<void>) => void;
-        "open"?: boolean;
         "overlay"?: boolean;
         "size"?: string;
     }

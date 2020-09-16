@@ -14,7 +14,6 @@ export class ZenModal {
   @Prop() centered: boolean;
   @Prop() closeOnOverlayClick: boolean = true;
   @Prop() height: string = '100%';
-  @Prop() open: boolean;
   @Prop() overlay: boolean = true;
   @Prop() size: string = 'md';
 
