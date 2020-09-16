@@ -1,3 +1,15 @@
 :host {
   display: block;
 }
+
+.modal-header {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+.modal-header > .close-btn {
+  position: absolute;
+  top: .5rem;
+  right: .5rem;
+}

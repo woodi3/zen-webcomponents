@@ -4,6 +4,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0" />
     <title>Stencil Component Starter</title>
+    <link rel="stylesheet" href="/build/zen-webcomponents.css">
     <script type="module" src="/build/zen-webcomponents.esm.js"></script>
     <script nomodule src="/build/zen-webcomponents.js"></script>
   </head>
@@ -93,6 +94,12 @@
         </zen-accordion-pane>
       </zen-accordion>
     </div>
+    <div>
+      <h4>Zen Modal</h4>
+      <zen-button onclick="openModal()">Open Modal</zen-button>
+      <div id="modal-container">
+      </div>
+    </div>
 
     <script>
       function onClick() {
@@ -123,6 +130,31 @@
       ];
       var accordion = document.getElementById('accordion');
       accordion.maxHeight = '50px';
+      var modalContainer = document.getElementById('modal-container');
+      function openModal () {
+        modalContainer.innerHTML = `
+        <zen-modal id="modal">
+          <zen-modal-header>
+            A header
+          </zen-modal-header>
+          <zen-modal-body>
+            Some Stuff
+          </zen-modal-body>
+          <zen-modal-footer>
+            <zen-button primary plain onclick="closeModal()">Primary Plain</zen-button>
+            <zen-button accent plain onclick="closeModal()">Accent Plain</zen-button>
+            <zen-button plain onclick="closeModal()">Close</zen-button>
+          </zen-modal-footer>
+        </zen-modal>
+        `;
+        var modal = document.getElementById('modal');
+        modal.addEventListener('close', closeModal);
+        modal.closeOnOverlayClick = false;
+      }
+      function closeModal () {
+        modalContainer.innerHTML = ``;
+      }
+
     </script>
   </body>
 </html>

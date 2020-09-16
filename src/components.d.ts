@@ -28,6 +28,7 @@ export namespace Components {
     interface ZenButton {
         "accent": boolean;
         "disabled": boolean;
+        "plain": boolean;
         "primary": boolean;
         "size": string;
     }
@@ -105,10 +106,19 @@ export namespace Components {
     interface ZenLink {
     }
     interface ZenModal {
+        "centered": boolean;
+        "closeOnOverlayClick": boolean;
+        "height": string;
+        "open": boolean;
+        "overlay": boolean;
+        "size": string;
     }
     interface ZenModalBody {
     }
+    interface ZenModalFooter {
+    }
     interface ZenModalHeader {
+        "showCloseBtn": boolean;
     }
     interface ZenRadio {
     }
@@ -268,6 +278,12 @@ declare global {
         prototype: HTMLZenModalBodyElement;
         new (): HTMLZenModalBodyElement;
     };
+    interface HTMLZenModalFooterElement extends Components.ZenModalFooter, HTMLStencilElement {
+    }
+    var HTMLZenModalFooterElement: {
+        prototype: HTMLZenModalFooterElement;
+        new (): HTMLZenModalFooterElement;
+    };
     interface HTMLZenModalHeaderElement extends Components.ZenModalHeader, HTMLStencilElement {
     }
     var HTMLZenModalHeaderElement: {
@@ -327,6 +343,7 @@ declare global {
         "zen-link": HTMLZenLinkElement;
         "zen-modal": HTMLZenModalElement;
         "zen-modal-body": HTMLZenModalBodyElement;
+        "zen-modal-footer": HTMLZenModalFooterElement;
         "zen-modal-header": HTMLZenModalHeaderElement;
         "zen-radio": HTMLZenRadioElement;
         "zen-resize-pane": HTMLZenResizePaneElement;
@@ -358,6 +375,7 @@ declare namespace LocalJSX {
     interface ZenButton {
         "accent"?: boolean;
         "disabled"?: boolean;
+        "plain"?: boolean;
         "primary"?: boolean;
         "size"?: string;
     }
@@ -435,10 +453,21 @@ declare namespace LocalJSX {
     interface ZenLink {
     }
     interface ZenModal {
+        "centered"?: boolean;
+        "closeOnOverlayClick"?: boolean;
+        "height"?: string;
+        "onClose"?: (event: CustomEvent<void>) => void;
+        "open"?: boolean;
+        "overlay"?: boolean;
+        "size"?: string;
     }
     interface ZenModalBody {
     }
+    interface ZenModalFooter {
+    }
     interface ZenModalHeader {
+        "onClose"?: (event: CustomEvent<void>) => void;
+        "showCloseBtn"?: boolean;
     }
     interface ZenRadio {
     }
@@ -487,6 +516,7 @@ declare namespace LocalJSX {
         "zen-link": ZenLink;
         "zen-modal": ZenModal;
         "zen-modal-body": ZenModalBody;
+        "zen-modal-footer": ZenModalFooter;
         "zen-modal-header": ZenModalHeader;
         "zen-radio": ZenRadio;
         "zen-resize-pane": ZenResizePane;
@@ -521,6 +551,7 @@ declare module "@stencil/core" {
             "zen-link": LocalJSX.ZenLink & JSXBase.HTMLAttributes<HTMLZenLinkElement>;
             "zen-modal": LocalJSX.ZenModal & JSXBase.HTMLAttributes<HTMLZenModalElement>;
             "zen-modal-body": LocalJSX.ZenModalBody & JSXBase.HTMLAttributes<HTMLZenModalBodyElement>;
+            "zen-modal-footer": LocalJSX.ZenModalFooter & JSXBase.HTMLAttributes<HTMLZenModalFooterElement>;
             "zen-modal-header": LocalJSX.ZenModalHeader & JSXBase.HTMLAttributes<HTMLZenModalHeaderElement>;
             "zen-radio": LocalJSX.ZenRadio & JSXBase.HTMLAttributes<HTMLZenRadioElement>;
             "zen-resize-pane": LocalJSX.ZenResizePane & JSXBase.HTMLAttributes<HTMLZenResizePaneElement>;

@@ -1,18 +1,21 @@
-import { Component, Host, h } from '@stencil/core';
+import { Component, h } from '@stencil/core';
 
 @Component({
   tag: 'zen-modal-body',
-  styleUrl: 'zen-modal-body.css',
-  shadow: true,
+  styleUrl: 'zen-modal-body.css'
 })
 export class ZenModalBody {
 
   render() {
     return (
-      <Host>
+      <div class={this.getClasses()}>
         <slot></slot>
-      </Host>
+      </div>
     );
+  }
+
+  private getClasses (): string {
+    return `modal-body`;
   }
 
 }
