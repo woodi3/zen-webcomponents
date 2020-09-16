@@ -84,3 +84,30 @@
 .zen-btn.accent:not(.disabled) button:focus {
   outline-color: var(--accent-hover);
 }
+.zen-btn.default.plain button {
+  color: var(--gs-2);
+  background-color: transparent;
+  border: none;
+}
+.zen-btn.default.plain:not(.disabled) button:hover {
+  background-color: var(--gs-1);
+  color: var(--gs-3);
+}
+.zen-btn.primary.plain button {
+  color: var(--primary);
+  background-color: transparent;
+  border: none;
+}
+.zen-btn.primary.plain:not(.disabled) button:hover {
+  background-color: var(--bg-1);
+  color: var(--bg-3);
+}
+.zen-btn.accent.plain button {
+  color: var(--bg-accent-1);
+  background-color: transparent;
+  border: none;
+}
+.zen-btn.accent.plain:not(.disabled) button:hover {
+  background-color: var(--accent-hover);
+  color: var(--bg-accent-3);
+}
