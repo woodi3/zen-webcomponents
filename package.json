@@ -28,7 +28,6 @@
     "test.watch": "stencil test --spec --e2e --watchAll",
     "generate": "stencil generate",
     "commit": "cz",
-    "story": "npm-run-all -p build:watch storybook",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook"
   },

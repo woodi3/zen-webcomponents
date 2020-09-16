@@ -1,0 +1,29 @@
+<script>
+    const modal = `<zen-modal id="modal">
+<zen-modal-header>
+A header
+</zen-modal-header>
+<zen-modal-body>
+Some Stuff
+</zen-modal-body>
+<zen-modal-footer>
+<zen-button primary plain onclick="closeModal()">Primary Plain</zen-button>
+<zen-button accent plain onclick="closeModal()">Accent Plain</zen-button>
+<zen-button plain onclick="closeModal()">Close</zen-button>
+</zen-modal-footer>
+</zen-modal>`;
+var modalContainer;
+function openModal () {
+    modalContainer = document.getElementById('modal-container');
+    modalContainer.innerHTML = modal;
+    setTimeout(() => {
+        var modal = document.getElementById('modal');
+        modal.addEventListener('close', closeModal);
+        modal.closeOnOverlayClick = false;
+    })
+}
+function closeModal () {
+    modalContainer = document.getElementById('modal-container');
+    modalContainer.innerHTML = ``;
+}
+</script>

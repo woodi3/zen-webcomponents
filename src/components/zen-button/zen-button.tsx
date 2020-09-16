@@ -10,7 +10,8 @@ export class ZenButton {
   @Prop() accent: boolean;
   @Prop() size: string; 
   @Prop() disabled: boolean;
-
+  @Prop() plain: boolean;
+ 
   render() {
     return (
       <Host class={this.getClassName()}>
@@ -28,7 +29,7 @@ export class ZenButton {
       return this.disabled ? 'disabled' : 'enabled';
     }
 
-    return `zen-btn ${color} ${size} ${disabledText.call(this)}`;
+    return `zen-btn ${color} ${size} ${disabledText.call(this)}${this.plain ? ' plain' : ''}`;
   }
   private getBackgroundColor() {
     let color = 'default';

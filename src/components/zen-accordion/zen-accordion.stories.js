@@ -1,6 +1,5 @@
 import { argTypes } from './argTypes';
 import { createStoryArgs } from '../../utils/utils';
-import { ZenAccordion } from './zen-accordion';
 
 export default {
     title: 'Zen Accordion',
@@ -9,10 +8,7 @@ export default {
 
 const args = createStoryArgs(argTypes);
 
-const Template = ({
-    allowToggle,
-    maxHeight
-}) => {
+const Template = () => {
     return /*html*/`
     <zen-accordion>
         <zen-accordion-pane>
