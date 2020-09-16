@@ -126,6 +126,9 @@ export namespace Components {
     interface ZenRow {
     }
     interface ZenSpinner {
+        "accent": boolean;
+        "label": string;
+        "size": string;
     }
     interface ZenTextarea {
         "ariaLabel": string;
@@ -474,6 +477,9 @@ declare namespace LocalJSX {
     interface ZenRow {
     }
     interface ZenSpinner {
+        "accent"?: boolean;
+        "label"?: string;
+        "size"?: string;
     }
     interface ZenTextarea {
         "ariaLabel"?: string;
