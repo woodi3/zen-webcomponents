@@ -98,6 +98,38 @@
       <h4>Zen Modal</h4>
       <zen-button onclick="openModal()">Open Modal</zen-button>
       <div id="modal-container">
+        <zen-modal id="modal">
+          <zen-modal-header>
+            <h4>Basic Header</h4>
+          </zen-modal-header>
+          <zen-modal-body>
+            <p>A body</p>
+          </zen-modal-body>
+          <zen-modal-footer>
+            <zen-button primary plain onclick="closeModal()">Primary</zen-button>
+            <zen-button accent plain onclick="closeModal()">Accent</zen-button>
+            <zen-button plain onclick="closeModal()">Close</zen-button>
+          </zen-modal-footer>
+        </zen-modal>
+      </div>
+    </div>
+    <div>
+      <h4>Zen Drawer</h4>
+      <zen-button onclick="openDrawer()">Open Drawer</zen-button>
+      <div id="drawer-container">
+        <zen-drawer id="drawer" size="sm" placement="bottom">
+          <zen-drawer-header>
+            <h4>Basic Header</h4>
+          </zen-drawer-header>
+          <zen-drawer-body>
+            <p>Some drawer body</p>
+          </zen-drawer-body>
+          <zen-drawer-footer>
+            <zen-button primary plain onclick="closeDrawer()">Primary</zen-button>
+            <zen-button accent plain onclick="closeDrawer()">Accent</zen-button>
+            <zen-button plain onclick="closeDrawer()">Close</zen-button>
+          </zen-drawer-footer>
+        </zen-drawer>
       </div>
     </div>
 
@@ -130,29 +162,23 @@
       ];
       var accordion = document.getElementById('accordion');
       accordion.maxHeight = '50px';
-      var modalContainer = document.getElementById('modal-container');
+
+      var modal = document.getElementById('modal');
       function openModal () {
-        modalContainer.innerHTML = `
-        <zen-modal id="modal">
-          <zen-modal-header>
-            A header
-          </zen-modal-header>
-          <zen-modal-body>
-            Some Stuff
-          </zen-modal-body>
-          <zen-modal-footer>
-            <zen-button primary plain onclick="closeModal()">Primary Plain</zen-button>
-            <zen-button accent plain onclick="closeModal()">Accent Plain</zen-button>
-            <zen-button plain onclick="closeModal()">Close</zen-button>
-          </zen-modal-footer>
-        </zen-modal>
-        `;
-        var modal = document.getElementById('modal');
         modal.addEventListener('close', closeModal);
-        modal.closeOnOverlayClick = false;
+        modal.open = true;
       }
       function closeModal () {
-        modalContainer.innerHTML = ``;
+        modal.open = false;
+      }
+
+      var drawer = document.getElementById('drawer');
+      drawer.addEventListener('close', closeDrawer);
+      function openDrawer () {
+        drawer.open = true;
+      }
+      function closeDrawer () {
+        drawer.open = false;
       }
 
     </script>
