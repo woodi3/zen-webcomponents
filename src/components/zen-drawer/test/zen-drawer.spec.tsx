@@ -8,10 +8,11 @@ describe('zen-drawer', () => {
       html: `<zen-drawer></zen-drawer>`,
     });
     expect(page.root).toEqualHtml(`
-      <zen-drawer>
-        <mock:shadow-root>
-          <slot></slot>
-        </mock:shadow-root>
+    <zen-drawer class="right md zen-drawer">
+      <div class="drawer-overlay"></div>
+      <zen-focus-lock>
+        <div class="closed drawer-content"></div>
+      </zen-focus-lock>
       </zen-drawer>
     `);
   });

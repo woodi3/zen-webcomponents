@@ -1,3 +1,88 @@
 :host {
   display: block;
 }
+.zen-drawer .drawer-content {
+  overflow: hidden;
+  transition-duration: 0.33s;
+  transition-timing-function: var(--easing-fn);
+  transition-delay: 0s;
+}
+.zen-drawer .drawer-content {
+  position: fixed;
+  z-index: 6;
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+  box-shadow: 0 .25rem .5rem 0 rgba(0,0,0,0.2);
+}
+.zen-drawer.left .drawer-content.closed, .zen-drawer.right .drawer-content.closed  {
+  height: 100%;
+  width: 0;
+}
+.zen-drawer.top .drawer-content.closed, .zen-drawer.bottom .drawer-content.closed  {
+  height: 0;
+  width: 100%;
+}
+.zen-drawer > .drawer-overlay.open {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.3);
+  z-index: 5;
+  width: 100%;
+  height: 100%;
+}
+.zen-drawer.left .drawer-content, .zen-drawer.right .drawer-content {
+  transition-property: width;
+}
+.zen-drawer.top .drawer-content, .zen-drawer.bottom .drawer-content {
+  transition-property: height;
+}
+.zen-drawer.left .drawer-content, .zen-drawer.right .drawer-content, .zen-drawer.top .drawer-content {
+  top: 0;
+}
+.zen-drawer.top .drawer-content, .zen-drawer.bottom .drawer-content, .zen-drawer.left .drawer-content {
+  left: 0;
+}
+.zen-drawer.right .drawer-content {
+  right: 0;
+}
+.zen-drawer.bottom .drawer-content {
+  bottom: 0;
+}
+.zen-drawer.right.sm .drawer-content.open, .zen-drawer.left.sm .drawer-content.open {
+  height: 100%;
+  max-width: var(--drawer-sm);
+  width: var(--drawer-sm);
+}
+.zen-drawer.top.sm .drawer-content.open, .zen-drawer.bottom.sm .drawer-content.open {
+  width: 100%;
+  max-height: var(--drawer-sm);
+  height: var(--drawer-sm);
+}
+.zen-drawer.right.md .drawer-content.open, .zen-drawer.left.md .drawer-content.open {
+  height: 100%;
+  max-width: var(--drawer-md);
+  width: var(--drawer-md);
+}
+.zen-drawer.top.md .drawer-content.open, .zen-drawer.open.bottom.md .drawer-content.open {
+  width: 100%;
+  max-height: var(--drawer-md);
+  height: var(--drawer-md);
+}
+.zen-drawer.right.lg .drawer-content.open, .zen-drawer.left.lg .drawer-content.open {
+  height: 100%;
+  max-width: var(--drawer-lg);
+  width: var(--drawer-lg);
+}
+.zen-drawer.top.lg .drawer-content.open, .zen-drawer.bottom.lg .drawer-content.open {
+  width: 100%;
+  max-height: var(--drawer-lg);
+  height: var(--drawer-lg);
+}
+.zen-drawer.full .drawer-content.open {
+  width: 100%;
+  height: 100%;
+}
