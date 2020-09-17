@@ -18,6 +18,12 @@ export const argTypes = {
             type: 'text'
         }
     },
+    open: {
+        description: 'Opens the modal.',
+        control: {
+            type: 'boolean'
+        }
+    },
     overlay: {
         description: 'Shows overlay when modal is opened.',
         defaultValue: true,

@@ -1,25 +1,20 @@
 :host {
   display: block;
 }
-
-.zen-modal > .modal-overlay {
+.zen-modal .modal-content {
   position: fixed;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  background-color: rgba(0, 0, 0, 0.3);
-  z-index: 5;
-}
-.zen-modal > .modal-content {
-  position: fixed;
-  top: 3.75rem;
+  transition-property: top;
+  transition-duration: .33s;
+  transition-timing-function: var(--easing-fn);
+  transition-delay: 0s;
   left: 50%;
+  top: 100%;
   -webkit-transform: translateX(-50%);
   transform: translateX(-50%);
   height: 100%;
+  overflow: hidden;
+  box-shadow: 0 .25rem .5rem 0 rgba(0,0,0,0.2);
   max-height: var(--modal-height);
-  width: 100%;
   overflow: hidden;
   z-index: 6;
   display: flex;
@@ -28,16 +23,44 @@
 }
 .modal-content.md {
   max-width: var(--modal-md-width);
+  width: var(--modal-md-width);
 }
 .modal-content.lg {
   max-width: var(--modal-lg-width);
+  width: var(--modal-lg-width);
 }
 .modal-content.sm {
   max-width: var(--modal-sm-width);
+  width: var(--modal-sm-width);
   max-height: var(--modal-sm-height);
 }
-.modal-content.centered {
+
+/* Footer has a position fixed, so make it relative when modal is closed */
+.zen-modal .modal-content .modal-footer {
+  position: relative;
+}
+/* Open modal styles */
+.zen-modal > .modal-overlay.open {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.3);
+  z-index: 5;
+  height: 100%;
+  width: 100%;
+}
+.zen-modal .modal-content.open {
+  top: 3.75rem;
+}
+.modal-content.open.centered {
   top: 50%;
   -webkit-transform: translateX(-50%) translateY(-50%);;
   transform: translateX(-50%) translateY(-50%);;
+}
+
+
+.zen-modal .modal-content.open .modal-footer {
+  position: fixed;
 }

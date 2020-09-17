@@ -1,5 +1,5 @@
 import { Component, Host, h, Prop, Element, Event, EventEmitter } from '@stencil/core';
-import { setLastFocusableElement, setFirstFocusableElement, getSize, listenForEscape, getArrayFromNodeList, focusableElementStr } from '../../utils/utils';
+import { getSize, listenForEscape, getArrayFromNodeList, focusableElementStr } from '../../utils/utils';
 
 @Component({
   tag: 'zen-modal',
@@ -15,17 +15,16 @@ export class ZenModal {
   @Prop() closeOnOverlayClick: boolean = true;
   @Prop() height: string = '100%';
   @Prop() overlay: boolean = true;
+  @Prop() open: boolean;
   @Prop() size: string = 'md';
 
-  startLockRef: HTMLDivElement;
-  endLockRef: HTMLDivElement;
   modalContentRef: HTMLDivElement;
 
   elementThatTriggered: HTMLElement;
 
   renderOverlay () {
     return (
-      <div class="modal-overlay" onClick={this.overlayClick.bind(this)}></div>
+      <div class={`modal-overlay${this.open ? ' open' : ''}`} onClick={this.overlayClick.bind(this)}></div>
     );
   }
 
@@ -34,10 +33,6 @@ export class ZenModal {
     this.elementThatTriggered = document.activeElement as HTMLElement;
     this.setAriaHidden();
     if (this.modalContentRef) {
-        const setFocus = this._setFirstFocusableElement();
-        if (!setFocus) {
-          this.modalContentRef.focus();
-        }
         listenForEscape(this.modalContentRef, this.handleEscapeClick.bind(this));
     }
   }
@@ -53,13 +48,13 @@ export class ZenModal {
     return (
       <Host class={this.getClasses()}>
         {this.overlay ? this.renderOverlay() : null}
-        <div tabIndex={0} ref={(el) => this.startLockRef = el} onFocus={this._setLastFocusableElement.bind(this)}></div>
-        <div class={this.getModalContentClasses()} 
-          ref={(el) => this.modalContentRef = el}
-          style={{height: this.height }}>
-          <slot></slot>
-        </div>
-        <div tabIndex={0} ref={(el) => this.endLockRef = el} onFocus={this._setFirstFocusableElement.bind(this)}></div>
+        <zen-focus-lock>
+          <div class={this.getModalContentClasses()} 
+            ref={(el) => this.modalContentRef = el}
+            style={{height: this.height }}>
+            <slot></slot>
+          </div>
+        </zen-focus-lock>
       </Host>
     );
   }
@@ -68,19 +63,14 @@ export class ZenModal {
     return `zen-modal`;
   }
   private getModalContentClasses (): string {
-    return `modal-content ${getSize(this.size)}${this.centered ? ' centered' : ''}`;
+    return `modal-content ${this.open ? 'open' : 'closed'} ${getSize(this.size)}${this.centered ? ' centered' : ''}`;
   }
   private overlayClick () {
     if (this.closeOnOverlayClick) {
       this.close.emit();
     }
   }
-  private _setFirstFocusableElement() {
-    return setFirstFocusableElement(document, this.modalContentRef);
-  }
-  private _setLastFocusableElement () {
-    setLastFocusableElement(document, this.modalContentRef);
-  }
+  
   private handleEscapeClick () {
     this.close.emit();
   }

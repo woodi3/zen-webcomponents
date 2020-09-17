@@ -47,6 +47,21 @@ export namespace Components {
     interface ZenDraggable {
     }
     interface ZenDrawer {
+        "closeOnOverlayClick": boolean;
+        "fullscreen": boolean;
+        "open": boolean;
+        "overlay": boolean;
+        "placement": 'top' | 'bottom' | 'left' | 'right';
+        "size": string;
+    }
+    interface ZenDrawerBody {
+    }
+    interface ZenDrawerContent {
+    }
+    interface ZenDrawerFooter {
+    }
+    interface ZenDrawerHeader {
+        "showCloseBtn": boolean;
     }
     interface ZenFileDrop {
     }
@@ -69,6 +84,8 @@ export namespace Components {
         "wrap": 'wrap' |
     'nowrap' |
     'wrap-reverse';
+    }
+    interface ZenFocusLock {
     }
     interface ZenIcon {
         "color": string;
@@ -109,6 +126,7 @@ export namespace Components {
         "centered": boolean;
         "closeOnOverlayClick": boolean;
         "height": string;
+        "open": boolean;
         "overlay": boolean;
         "size": string;
     }
@@ -220,6 +238,30 @@ declare global {
         prototype: HTMLZenDrawerElement;
         new (): HTMLZenDrawerElement;
     };
+    interface HTMLZenDrawerBodyElement extends Components.ZenDrawerBody, HTMLStencilElement {
+    }
+    var HTMLZenDrawerBodyElement: {
+        prototype: HTMLZenDrawerBodyElement;
+        new (): HTMLZenDrawerBodyElement;
+    };
+    interface HTMLZenDrawerContentElement extends Components.ZenDrawerContent, HTMLStencilElement {
+    }
+    var HTMLZenDrawerContentElement: {
+        prototype: HTMLZenDrawerContentElement;
+        new (): HTMLZenDrawerContentElement;
+    };
+    interface HTMLZenDrawerFooterElement extends Components.ZenDrawerFooter, HTMLStencilElement {
+    }
+    var HTMLZenDrawerFooterElement: {
+        prototype: HTMLZenDrawerFooterElement;
+        new (): HTMLZenDrawerFooterElement;
+    };
+    interface HTMLZenDrawerHeaderElement extends Components.ZenDrawerHeader, HTMLStencilElement {
+    }
+    var HTMLZenDrawerHeaderElement: {
+        prototype: HTMLZenDrawerHeaderElement;
+        new (): HTMLZenDrawerHeaderElement;
+    };
     interface HTMLZenFileDropElement extends Components.ZenFileDrop, HTMLStencilElement {
     }
     var HTMLZenFileDropElement: {
@@ -231,6 +273,12 @@ declare global {
     var HTMLZenFlexElement: {
         prototype: HTMLZenFlexElement;
         new (): HTMLZenFlexElement;
+    };
+    interface HTMLZenFocusLockElement extends Components.ZenFocusLock, HTMLStencilElement {
+    }
+    var HTMLZenFocusLockElement: {
+        prototype: HTMLZenFocusLockElement;
+        new (): HTMLZenFocusLockElement;
     };
     interface HTMLZenIconElement extends Components.ZenIcon, HTMLStencilElement {
     }
@@ -335,8 +383,13 @@ declare global {
         "zen-drag-zone": HTMLZenDragZoneElement;
         "zen-draggable": HTMLZenDraggableElement;
         "zen-drawer": HTMLZenDrawerElement;
+        "zen-drawer-body": HTMLZenDrawerBodyElement;
+        "zen-drawer-content": HTMLZenDrawerContentElement;
+        "zen-drawer-footer": HTMLZenDrawerFooterElement;
+        "zen-drawer-header": HTMLZenDrawerHeaderElement;
         "zen-file-drop": HTMLZenFileDropElement;
         "zen-flex": HTMLZenFlexElement;
+        "zen-focus-lock": HTMLZenFocusLockElement;
         "zen-icon": HTMLZenIconElement;
         "zen-icon-button": HTMLZenIconButtonElement;
         "zen-image": HTMLZenImageElement;
@@ -396,6 +449,23 @@ declare namespace LocalJSX {
     interface ZenDraggable {
     }
     interface ZenDrawer {
+        "closeOnOverlayClick"?: boolean;
+        "fullscreen"?: boolean;
+        "onClose"?: (event: CustomEvent<void>) => void;
+        "open"?: boolean;
+        "overlay"?: boolean;
+        "placement"?: 'top' | 'bottom' | 'left' | 'right';
+        "size"?: string;
+    }
+    interface ZenDrawerBody {
+    }
+    interface ZenDrawerContent {
+    }
+    interface ZenDrawerFooter {
+    }
+    interface ZenDrawerHeader {
+        "onClose"?: (event: CustomEvent<void>) => void;
+        "showCloseBtn"?: boolean;
     }
     interface ZenFileDrop {
     }
@@ -418,6 +488,8 @@ declare namespace LocalJSX {
         "wrap"?: 'wrap' |
     'nowrap' |
     'wrap-reverse';
+    }
+    interface ZenFocusLock {
     }
     interface ZenIcon {
         "color"?: string;
@@ -459,6 +531,7 @@ declare namespace LocalJSX {
         "closeOnOverlayClick"?: boolean;
         "height"?: string;
         "onClose"?: (event: CustomEvent<void>) => void;
+        "open"?: boolean;
         "overlay"?: boolean;
         "size"?: string;
     }
@@ -510,8 +583,13 @@ declare namespace LocalJSX {
         "zen-drag-zone": ZenDragZone;
         "zen-draggable": ZenDraggable;
         "zen-drawer": ZenDrawer;
+        "zen-drawer-body": ZenDrawerBody;
+        "zen-drawer-content": ZenDrawerContent;
+        "zen-drawer-footer": ZenDrawerFooter;
+        "zen-drawer-header": ZenDrawerHeader;
         "zen-file-drop": ZenFileDrop;
         "zen-flex": ZenFlex;
+        "zen-focus-lock": ZenFocusLock;
         "zen-icon": ZenIcon;
         "zen-icon-button": ZenIconButton;
         "zen-image": ZenImage;
@@ -545,8 +623,13 @@ declare module "@stencil/core" {
             "zen-drag-zone": LocalJSX.ZenDragZone & JSXBase.HTMLAttributes<HTMLZenDragZoneElement>;
             "zen-draggable": LocalJSX.ZenDraggable & JSXBase.HTMLAttributes<HTMLZenDraggableElement>;
             "zen-drawer": LocalJSX.ZenDrawer & JSXBase.HTMLAttributes<HTMLZenDrawerElement>;
+            "zen-drawer-body": LocalJSX.ZenDrawerBody & JSXBase.HTMLAttributes<HTMLZenDrawerBodyElement>;
+            "zen-drawer-content": LocalJSX.ZenDrawerContent & JSXBase.HTMLAttributes<HTMLZenDrawerContentElement>;
+            "zen-drawer-footer": LocalJSX.ZenDrawerFooter & JSXBase.HTMLAttributes<HTMLZenDrawerFooterElement>;
+            "zen-drawer-header": LocalJSX.ZenDrawerHeader & JSXBase.HTMLAttributes<HTMLZenDrawerHeaderElement>;
             "zen-file-drop": LocalJSX.ZenFileDrop & JSXBase.HTMLAttributes<HTMLZenFileDropElement>;
             "zen-flex": LocalJSX.ZenFlex & JSXBase.HTMLAttributes<HTMLZenFlexElement>;
+            "zen-focus-lock": LocalJSX.ZenFocusLock & JSXBase.HTMLAttributes<HTMLZenFocusLockElement>;
             "zen-icon": LocalJSX.ZenIcon & JSXBase.HTMLAttributes<HTMLZenIconElement>;
             "zen-icon-button": LocalJSX.ZenIconButton & JSXBase.HTMLAttributes<HTMLZenIconButtonElement>;
             "zen-image": LocalJSX.ZenImage & JSXBase.HTMLAttributes<HTMLZenImageElement>;
