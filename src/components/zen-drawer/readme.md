@@ -13,7 +13,7 @@
 | `fullscreen`          | `fullscreen`             |             | `boolean`                                | `undefined` |
 | `open`                | `open`                   |             | `boolean`                                | `undefined` |
 | `overlay`             | `overlay`                |             | `boolean`                                | `true`      |
-| `placement`           | `placement`              |             | `"bottom" \| "left" \| "right" \| "top"` | `'left'`    |
+| `placement`           | `placement`              |             | `"bottom" \| "left" \| "right" \| "top"` | `'right'`   |
 | `size`                | `size`                   |             | `string`                                 | `'md'`      |
 
 
