@@ -1,17 +1,24 @@
-import { Component, Host, h } from '@stencil/core';
+import { Component, h, Prop } from '@stencil/core';
 
 @Component({
   tag: 'zen-icon-button',
-  styleUrl: 'zen-icon-button.css',
-  shadow: true,
+  styleUrl: 'zen-icon-button.css'
 })
 export class ZenIconButton {
 
+  @Prop() accent: boolean;
+  @Prop() icon: string;
+  @Prop() label: string;
+  @Prop() primary: boolean;
+  @Prop() size: string;
+  
+
   render() {
     return (
-      <Host>
-        <slot></slot>
-      </Host>
+      <zen-button accent={this.accent} primary={this.primary} plain size={this.size}>
+          <span class="sr-only">{this.label}</span>
+          <zen-icon icon={this.icon} size={this.size}></zen-icon>
+      </zen-button>
     );
   }
 

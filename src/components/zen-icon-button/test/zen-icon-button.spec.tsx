@@ -8,11 +8,12 @@ describe('zen-icon-button', () => {
       html: `<zen-icon-button></zen-icon-button>`,
     });
     expect(page.root).toEqualHtml(`
-      <zen-icon-button>
-        <mock:shadow-root>
-          <slot></slot>
-        </mock:shadow-root>
-      </zen-icon-button>
+     <zen-icon-button>
+       <zen-button plain="">
+         <span class="sr-only"></span>
+         <zen-icon></zen-icon>
+       </zen-button>
+     </zen-icon-button>
     `);
   });
 });

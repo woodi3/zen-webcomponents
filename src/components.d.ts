@@ -93,6 +93,11 @@ export namespace Components {
         "size": string;
     }
     interface ZenIconButton {
+        "accent": boolean;
+        "icon": string;
+        "label": string;
+        "primary": boolean;
+        "size": string;
     }
     interface ZenImage {
         "altText": string;
@@ -497,6 +502,11 @@ declare namespace LocalJSX {
         "size"?: string;
     }
     interface ZenIconButton {
+        "accent"?: boolean;
+        "icon"?: string;
+        "label"?: string;
+        "primary"?: boolean;
+        "size"?: string;
     }
     interface ZenImage {
         "altText"?: string;
