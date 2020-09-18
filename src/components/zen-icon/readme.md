@@ -20,6 +20,7 @@
 
  - [zen-accordion-header](../zen-accordion-header)
  - [zen-drawer-header](../zen-drawer-header)
+ - [zen-icon-button](../zen-icon-button)
  - [zen-modal-header](../zen-modal-header)
 
 ### Graph
@@ -27,6 +28,7 @@
 graph TD;
   zen-accordion-header --> zen-icon
   zen-drawer-header --> zen-icon
+  zen-icon-button --> zen-icon
   zen-modal-header --> zen-icon
   style zen-icon fill:#f9f,stroke:#333,stroke-width:4px
 ```

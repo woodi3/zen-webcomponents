@@ -23,16 +23,16 @@ export class ZenIcon {
       height: 12
     },
     'md': {
+      width: 18,
+      height: 18
+    },
+    'lg': {
       width: 24,
       height: 24
     },
-    'lg': {
-      width: 36,
-      height: 36
-    },
     'xl': {
-      width: 48,
-      height: 48
+      width: 30,
+      height: 30
     }
   };
 
