@@ -63,7 +63,7 @@
       <h4>Zen accordion</h4>
       <zen-accordion id="accordion">
         <zen-accordion-pane>
-          <zen-accordion-header>Header 1</zen-accordion-header>
+          <zen-accordion-header data-zen-tooltip="Accordion Header 1">Header 1</zen-accordion-header>
           <zen-accordion-body>
             Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard
             dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen
@@ -100,7 +100,7 @@
       <div id="modal-container">
         <zen-modal id="modal">
           <zen-modal-header>
-            <h4>Basic Header</h4>
+            <h4 data-zen-tooltip="Modal Header 1">Basic Header</h4>
           </zen-modal-header>
           <zen-modal-body>
             <p>A body</p>
@@ -114,7 +114,7 @@
       </div>
     </div>
     <div>
-      <h4>Zen Drawer</h4>
+      <h4 data-zen-tooltip="Some tooltip" style="display: inline;">Zen Drawer</h4>
       <zen-button onclick="openDrawer()">Open Drawer</zen-button>
       <div id="drawer-container">
         <zen-drawer id="drawer" size="sm" placement="bottom">
@@ -122,7 +122,7 @@
             <h4>Basic Header</h4>
           </zen-drawer-header>
           <zen-drawer-body>
-            <p>Some drawer body</p>
+            <p data-zen-tooltip="Some tooltip">Some drawer body</p>
           </zen-drawer-body>
           <zen-drawer-footer>
             <zen-button primary plain onclick="closeDrawer()">Primary</zen-button>
@@ -131,6 +131,7 @@
           </zen-drawer-footer>
         </zen-drawer>
       </div>
+      <zen-tooltip></zen-tooltip>
     </div>
 
     <script>

@@ -16,7 +16,7 @@
   box-shadow: 0 .25rem .5rem 0 rgba(0,0,0,0.2);
   max-height: var(--modal-height);
   overflow: hidden;
-  z-index: 6;
+  z-index: var(--modal-z-index);;
   display: flex;
   flex-direction: column;
   background-color: #fff;

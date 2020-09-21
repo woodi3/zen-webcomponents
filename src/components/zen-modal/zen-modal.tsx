@@ -1,4 +1,4 @@
-import { Component, Host, h, Prop, Element, Event, EventEmitter } from '@stencil/core';
+import { Component, Host, h, Prop, Element, Event, EventEmitter, Watch } from '@stencil/core';
 import { getSize, listenForEscape, getArrayFromNodeList, focusableElementStr } from '../../utils/utils';
 
 @Component({
@@ -28,19 +28,21 @@ export class ZenModal {
     );
   }
 
-  componentDidLoad () {
-    document.body.classList.add('zen-no-scroll');
-    this.elementThatTriggered = document.activeElement as HTMLElement;
-    this.setAriaHidden();
-    if (this.modalContentRef) {
+  @Watch('open')
+  openWatchHandler(newValue: boolean) {
+    if (newValue == true) {
+      document.body.classList.add('zen-no-scroll');
+      this.elementThatTriggered = document.activeElement as HTMLElement;
+      this.setAriaHidden();
+      if (this.modalContentRef) {
         listenForEscape(this.modalContentRef, this.handleEscapeClick.bind(this));
-    }
-  }
-  disconnectedCallback () {
-    document.body.classList.remove('zen-no-scroll');
-    this.removeAriaHidden();
-    if (this.elementThatTriggered) {
-      this.elementThatTriggered.focus();
+      }
+    } else {
+      document.body.classList.remove('zen-no-scroll');
+      this.removeAriaHidden();
+      if (this.elementThatTriggered) {
+        this.elementThatTriggered.focus();
+      }
     }
   }
 
@@ -78,11 +80,12 @@ export class ZenModal {
     const allTabbableElements = getArrayFromNodeList(document.querySelectorAll(focusableElementStr));
     const modalFocusableElements = getArrayFromNodeList(this.modalContentRef.querySelectorAll(focusableElementStr));
     return allTabbableElements
-      .filter(function isElOutside(el) {
-        return modalFocusableElements.findIndex(function elEquals(el2) {
-          el2.isEqualNode(el)
-        }) < 0;
-      });
+      .filter(
+        (el) => modalFocusableElements
+          .findIndex(
+          el2 => el2.isEqualNode(el)
+        ) < 0
+      );
   }
   private setAriaHidden () {
     const outsideModal = this.getElementsOutsideModal();

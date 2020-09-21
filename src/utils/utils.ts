@@ -18,6 +18,8 @@ export const DEFAULT_THEME = {
     'avatar-sm': '24px',
     'avatar-md': '48px',
     'avatar-lg': '72px',
+    'modal-z-index': '6',
+    'tooltip-z-index': '7',
     'backgroundColors': {
         values: ["#858AE3", "#4E148C", "#2C0735"],
         prefix: 'bg'

@@ -9,7 +9,7 @@
 }
 .zen-drawer .drawer-content {
   position: fixed;
-  z-index: 6;
+  z-index: var(--modal-z-index);;
   display: flex;
   flex-direction: column;
   background-color: #fff;

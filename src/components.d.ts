@@ -169,6 +169,8 @@ export namespace Components {
         "value": string;
         "variant": 'outline' | 'flushed' | 'unstyled';
     }
+    interface ZenTooltip {
+    }
 }
 declare global {
     interface HTMLZenAccordionElement extends Components.ZenAccordion, HTMLStencilElement {
@@ -375,6 +377,12 @@ declare global {
         prototype: HTMLZenTextareaElement;
         new (): HTMLZenTextareaElement;
     };
+    interface HTMLZenTooltipElement extends Components.ZenTooltip, HTMLStencilElement {
+    }
+    var HTMLZenTooltipElement: {
+        prototype: HTMLZenTooltipElement;
+        new (): HTMLZenTooltipElement;
+    };
     interface HTMLElementTagNameMap {
         "zen-accordion": HTMLZenAccordionElement;
         "zen-accordion-body": HTMLZenAccordionBodyElement;
@@ -410,6 +418,7 @@ declare global {
         "zen-row": HTMLZenRowElement;
         "zen-spinner": HTMLZenSpinnerElement;
         "zen-textarea": HTMLZenTextareaElement;
+        "zen-tooltip": HTMLZenTooltipElement;
     }
 }
 declare namespace LocalJSX {
@@ -580,6 +589,8 @@ declare namespace LocalJSX {
         "value"?: string;
         "variant"?: 'outline' | 'flushed' | 'unstyled';
     }
+    interface ZenTooltip {
+    }
     interface IntrinsicElements {
         "zen-accordion": ZenAccordion;
         "zen-accordion-body": ZenAccordionBody;
@@ -615,6 +626,7 @@ declare namespace LocalJSX {
         "zen-row": ZenRow;
         "zen-spinner": ZenSpinner;
         "zen-textarea": ZenTextarea;
+        "zen-tooltip": ZenTooltip;
     }
 }
 export { LocalJSX as JSX };
@@ -655,6 +667,7 @@ declare module "@stencil/core" {
             "zen-row": LocalJSX.ZenRow & JSXBase.HTMLAttributes<HTMLZenRowElement>;
             "zen-spinner": LocalJSX.ZenSpinner & JSXBase.HTMLAttributes<HTMLZenSpinnerElement>;
             "zen-textarea": LocalJSX.ZenTextarea & JSXBase.HTMLAttributes<HTMLZenTextareaElement>;
+            "zen-tooltip": LocalJSX.ZenTooltip & JSXBase.HTMLAttributes<HTMLZenTooltipElement>;
         }
     }
 }
